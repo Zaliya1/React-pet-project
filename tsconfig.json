@@ -10,6 +10,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
+    "strictPropertyInitialization": false,
     "useDefineForClassFields": true,
     "experimentalDecorators": true,
     "sourceMap": true,
@@ -38,5 +39,9 @@
   ],
   "exclude": [
     "node_modules"
+  ],
+  "types": [
+    "./types/vue/",
+    "./types/vue-router/"
   ]
 }
