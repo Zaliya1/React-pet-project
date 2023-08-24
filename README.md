@@ -1,46 +1,26 @@
-# Getting Started with Create React App
+# Сравочник
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Архитектура
 
-## Available Scripts
+Проект построен на реактивном фреймворке [React]() и [TypeScript](https://www.typescriptlang.org/). Приложение во время выполнения хранит данные в памяти во [Redux](https://redux.com/), также используются библиотеки [vuex-module-decorators](https://github.com/championswimmer/vuex-module-decorators) и [vue-property-decorator](https://github.com/kaorun343/vue-property-decorator) для удобства интеграции Vue с TypeScript'ом и повышения качества типизации кода.
 
-In the project directory, you can run:
+Основная архитектурная идея состоит в 3 сущностях:
+* __Компоненты__, находятся в папке `src/components`, обязаны отрисовывать графические элементы интерфейса пользователя, должны содержать насколько возможно минимум самостоятельной логики и общаться с окружением только через пропы и события. _Не должны взаимодействовать со стором напрямую._ _Не должны взаимодействовать с API клиентами напрямую._
+* __Страницы__, находятся в папке `src/pages`, обычно подключаются в роутер, кем и отрисовываются, обязаны отрисовывать страницу приложения, могут использовать в себе компоненты, могут общаться со стором напрямую.
+* __Store__, находятся в папке `src/store`, конкретные модули именуются с постфиксом Module в именах классов и файлов.
+
+## Структура папок
+
+* `public` -- статические некомпилируемые файлы проекта
+* `src/assets` -- компилируемые файлы ассетов
+* `src/components` -- переиспользуемые компоненты
+* `src/router.ts` -- конфигурация роутинга
+* `src/store` -- конфигурация и подключение Vuex стора
+* `src/pages` -- компоненты страниц, подключаются на роуты в router
+* `src/app.vue` -- корневой компонент проекта
+* `src/main.ts` -- точка входа проекта
 
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
