@@ -1,0 +1,56 @@
+.pagination {
+    margin-bottom: 10px;
+}
+.ant-list-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.ant-card-meta-title {
+    white-space: normal !important;
+}
+.games__settings {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.games__filters, .games__pagination {
+    display: flex;
+    flex-direction: column;
+}
+.games__pagination {
+    align-items: flex-end;
+}
+.games__filters {
+    align-items: flex-start;
+}
+.filter-select {
+    min-width: 250px;
+    margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+    .games__settings {
+        flex-direction: column;
+    }
+    .games__filters, .games__pagination {
+        align-items: normal;
+    }
+    .pagination {
+        display: flex;
+        justify-content: space-around;
+    }
+    .games-item__card {
+        max-width: 250px;
+    }
+}
+@media (max-width: 576px) {
+    .games-item__card {
+        max-width: 100%;
+    }
+    /*.ant-list-items {*/
+    /*    width: 100%;*/
+    /*}*/
+    .games-item {
+        width: 100%;
+    }
+}
